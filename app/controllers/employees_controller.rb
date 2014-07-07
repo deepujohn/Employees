@@ -20,7 +20,7 @@ class EmployeesController < ApplicationController
 		@employee=Employee.find(params[:id])		
 	end
 	def update
-		@employee=Employee.find(parms[:id])
+		@employee=Employee.find(params[:id])
 		if @employee.update(employee_params)
 			redirect_to @employee
 		else
@@ -28,9 +28,9 @@ class EmployeesController < ApplicationController
 		end
 	end
 	def destroy
-		@employee=Employee.find([:id])
+		@employee=Employee.find(params[:id])
 		@employee.destroy
-		redirect_to articles_path
+		redirect_to employees_path
 	end
 	private
 	def employee_params
